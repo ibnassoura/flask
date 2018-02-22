@@ -12,4 +12,3 @@ post.add("Third Post","This is the third post for testing! ")
 
 member.get_all()
 post.get_all()
-
