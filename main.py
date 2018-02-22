@@ -1,13 +1,15 @@
 import models
 
-member1=models.Member("Ibrahim",25)
-member2=models.Member("Ali",33)
+member=models.MemberStore()
+member.add("Ibrahim",25)
+member.add("Ali",33)
 
-post1=models.Posts("First Post","This is the first post for testing! ")
-post2=post1=models.Posts("Second Post","This is the second post for testing! ")
-post3=models.Posts("Third Post","This is the third post for testing! ")
 
-print member1.name
-print member1.age
-print post1.title
-print post3.content
+post=models.MemberPosts()
+post.add("First Post","This is the first post for testing! ")
+post.add("Second Post","This is the second post for testing! ")
+post.add("Third Post","This is the third post for testing! ")
+
+member.get_all()
+post.get_all()
+
