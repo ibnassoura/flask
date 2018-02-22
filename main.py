@@ -3,13 +3,13 @@ import stores
 
 
 
-member1=models.Member("Ibrahim",25)
-member2=models.Member("Ali",33)
 
-member=stores.MemberStore()
+memberlist=[["Ibrahim",25],["Ali",33],["Mohammed",41]]
+for each in memberlist:
+    membertoadd=models.Member(each[0],each[1])
+    membertostore=stores.MemberStore()
+    membertostore.add(membertoadd)
 
-member.add(member1)
-member.add(member2)
 
 
 post1=models.Posts("First Post","This is the first post for testing! ")
@@ -21,5 +21,5 @@ post.add(post1)
 post.add(post2)
 post.add(post3)
 
-member.get_all()
+membertostore.get_all()
 post.get_all()
