@@ -20,7 +20,8 @@ class MemberStore():
 
     def get_all(self):
         for each in MemberStore.members:
-            print str(each)
+            print "Member Name: " + str(each[0])
+            print "Age: " + str(each[1])
 
 class MemberPosts:
     posts=[]
@@ -30,4 +31,5 @@ class MemberPosts:
 
     def get_all(self):
         for each in MemberPosts.posts:
-            print str(each)
+            print "Post Title: " +str(each[0])
+            print "Post Content: "+ str(each[1])
