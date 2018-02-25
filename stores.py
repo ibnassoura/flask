@@ -46,8 +46,7 @@ class MemberStore():
             if member.id==each.id:
                 users[index]=member
                 break
-            else:
-                count+=1
+
 
 class MemberPosts:
     posts=[]
