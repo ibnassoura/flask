@@ -13,25 +13,37 @@ class MemberStore():
             
 
     def get_by_id(self,id):
-        all_members=MemberStore.get_all()
+        all_members=self.get_all()
+        result=None
+        
         for each in all_members:
             if each.id==id:
-                return each
-            else:
-                return None
+                result=each
+                break
+        return result
+
+    def get_by_name(self,name):
+        all_members=self.get_all()
+        result=[]
+        for each in all_members:
+            if each.name==name:
+                result.append(each)
+        return result
+        
     def entity_exists(self,member):
-        if member is MemberStore.get_by_id(member):
-            return False
-        else:
-            return True
+        result = True
+        if self.get_by_id(member.id) is None:
+            result=False
+        return result
 
     def delete(self,id):
-        did=MemberStore.get_by_id(id)
-        if MemberStore.entity.exists(id):
-            MemberStore.members.remove(did)
-            return MemberStore.members
-        else:
-            return MemberStore.members
+        did=self.get_by_id(id)
+        MemberStore.members.remove(did)
+
+    def update(self,member):
+        user=self.get_by_id(member.id)
+        
+
 
 class MemberPosts:
     posts=[]
