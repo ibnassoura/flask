@@ -41,9 +41,14 @@ class MemberStore():
         MemberStore.members.remove(did)
 
     def update(self,member):
-        user=self.get_by_id(member.id)
-        
-
+        users=self.get_all()
+        count=0
+        for each in users:
+            if member.id==each.id:
+                users[count]=member
+                break
+            else:
+                count+=1
 
 class MemberPosts:
     posts=[]
