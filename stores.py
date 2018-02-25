@@ -42,10 +42,9 @@ class MemberStore():
 
     def update(self,member):
         users=self.get_all()
-        count=0
-        for each in users:
+        for index, each in enumerate(users):
             if member.id==each.id:
-                users[count]=member
+                users[index]=member
                 break
             else:
                 count+=1
