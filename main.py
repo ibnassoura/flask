@@ -4,11 +4,13 @@ import stores
 
 
 
-memberlist=[["Ibrahim",25],["Ali",33],["Mohammed",41]]
+memberlist=[["Ibrahim",25],["Ali",33],["Ibrahim",25],["Mohammed",41]]
+
 for each in memberlist:
     membertoadd=models.Member(each[0],each[1])
     membertostore=stores.MemberStore()
     membertostore.add(membertoadd)
+
 
 
 
@@ -21,5 +23,10 @@ post.add(post1)
 post.add(post2)
 post.add(post3)
 
-membertostore.get_all()
-post.get_all()
+
+
+
+
+
+
+
