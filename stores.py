@@ -46,13 +46,35 @@ class MemberStore():
             if member.id==each.id:
                 users[index]=member
                 break
+            
+    def get_members_with_posts(self,all_posts):
+        allmembers=self.get_all()
+
+        for member in allmembers:
+            for post in all_posts:
+                if member.id==post.member_id:
+                    member.posts.append(post)
+        return self.get_all()
+            
+
+    def get_top_two(self,members):
+
+        newlist=sorted(self.get_members_with_posts(members),key=lambda x: len(x.posts),reverse=True)
+        return newlist[:2]
+        
 
 
-class MemberPosts:
+class PostStore:
     posts=[]
+    last_id=1
 
     def add(self,post):
-        MemberPosts.posts.append(post)
+        post.id=PostStore.last_id
+        PostStore.posts.append(post)
+        PostStore.last_id+=1
 
     def get_all(self):
-        return MemberPosts.posts
+        return PostStore.posts
+
+
+        
