@@ -2,6 +2,7 @@ import models
 import stores
 
 
+
 def create_members():
     member1 = models.Member("Mohammed", 20)
     member2 = models.Member("Ibrahim", 22)
@@ -105,7 +106,7 @@ def store_should_get_members_with_posts(member_store, post_store):
     members_with_posts = member_store.get_members_with_posts(post_store.get_all())
 
     for member_with_posts in members_with_posts:
-        print ( str(member_with_posts) + "Has posts: ")
+        print ( str(member_with_posts) + " Has posts: ")
         for post in member_with_posts.posts:
             print(str(post))
 
@@ -154,3 +155,6 @@ store_should_get_members_with_posts(member_store, post_store)
 
 
 store_should_get_top_two(member_store, post_store)
+print "xxxxxxxxxxxxx"
+postdate=stores.PostStore()
+postdate.get_posts_by_date()

@@ -1,4 +1,5 @@
 import stores
+import datetime
 class Member:
     def __init__(self,name,age):
         self.id=0
@@ -15,7 +16,8 @@ class Post():
         self.title=title
         self.content=content
         self.member_id=member_id
+        self.date=datetime.datetime.now()
 
     def __str__(self):
-        return "Title: "+str(self.title) + ", Content: "+str(self.content)
+        return "Title: "+str(self.title) + ", Content: "+str(self.content)+ "Time: "+str(self.date)
         
