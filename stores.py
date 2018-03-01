@@ -41,12 +41,12 @@ class BaseStore():
             result=Flase
         return result
 
-class MemberStore(BaseStore,object):
+class MemberStore(BaseStore):
     members=[]
     last_id = 1
 
     def __init__(self):
-        super(MemberStore,self).__init__(MemberStore.members, MemberStore.last_id)
+        BaseStore.__init__(self,MemberStore.members, MemberStore.last_id)
 
     def get_by_name(self,name):
         all_members=self.get_all()
@@ -74,12 +74,12 @@ class MemberStore(BaseStore,object):
         
 
 
-class PostStore(BaseStore,object):
+class PostStore(BaseStore):
     posts=[]
     last_id=1
 
     def __init__(self):
-        super(PostStore,self).__init__(PostStore.posts, PostStore.last_id)
+        BaseStore.__init__(self,PostStore.posts, PostStore.last_id)
 
     def get_posts_by_date(self):
         allposts=copy.deepcopy(self.get_all())
